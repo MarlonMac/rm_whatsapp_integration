@@ -40,14 +40,14 @@ class SaleOrder(models.Model):
             raise ValidationError(_('¡Agrega un número de whatsapp'
                                     'válido junto a un código de pais válido!'))
         twilio_whatsapp = (self.env["ir.config_parameter"].sudo().get_param
-                           ("all_in_one_whatsapp_integration.twilio_whatsapp"))
+                           ("rm_whatsapp_integration.twilio_whatsapp"))
         if not twilio_whatsapp:
             raise ValidationError(_("Please add your valid twilio"
                                     "whatsapp number in settings"))
         if twilio_whatsapp[0] != "+":
             raise ValidationError(_("Please add a valid "
                                     "twilio mobile number along with +"))
-        template_id = self.env.ref("all_in_one_whatsapp_integration."
+        template_id = self.env.ref("rm_whatsapp_integration."
                                    "sale_order_whatsapp_template").id
         mail_template_values = (self.env["mail.template"].
                                 with_context(tpl_partners_only=True).

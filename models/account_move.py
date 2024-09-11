@@ -44,12 +44,12 @@ class AccountMove(models.Model):
                 _('Please add a valid mobile number along with a valid'
                   ' country code!'))
         twilio_whatsapp = self.env['ir.config_parameter'].sudo().get_param(
-            'all_in_one_whatsapp_integration.twilio_whatsapp')
+            'rm_whatsapp_integration.twilio_whatsapp')
         if not twilio_whatsapp.startswith('+'):
             raise ValidationError(
                 _('Please add a valid Twilio mobile number along with "+".'))
         template_id = self.env.ref(
-            'all_in_one_whatsapp_integration.account_move_whatsapp_template').id
+            'rm_whatsapp_integration.account_move_whatsapp_template').id
         mail_template = self.env['mail.template'].browse(template_id)
         mail_template_values = mail_template.with_context(
             tpl_partners_only=True).generate_email(

@@ -28,25 +28,25 @@ class ResConfigSettings(models.TransientModel):
     _inherit = "res.config.settings"
 
     account_sid = fields.Char(string="Account SID",
-                              config_parameter='all_in_one_whatsapp_integration.'
+                              config_parameter='rm_whatsapp_integration.'
                                                'account_sid',
                               help="Account SID of twilio account", )
     auth_token = fields.Char(string="Auth Token",
-                             config_parameter='all_in_one_whatsapp_integration.'
+                             config_parameter='rm_whatsapp_integration.'
                                               'auth_token',
                              help="Auth Token of twilio account")
     twilio_whatsapp = fields.Char(string="Twilio Whatsapp Number",
-                                  config_parameter='all_in_one_whatsapp_integration'
+                                  config_parameter='rm_whatsapp_integration'
                                                    '.twilio_whatsapp',
                                   help="Whatsapp number of twilio account")
     bearer_token = fields.Char(string="Whatsapp Access Token",
                                help="Authorization Token of Whatsapp Cloud "
                                     "API",
-                               config_parameter='all_in_one_whatsapp_integration.'
+                               config_parameter='rm_whatsapp_integration.'
                                                 'bearer_token', )
     whatsapp_no = fields.Char(string="Phone number ID",
                               help="Phone Number ID of Whatsapp Cloud API",
-                              config_parameter='all_in_one_whatsapp_integration.'
+                              config_parameter='rm_whatsapp_integration.'
                                                'whatsapp_no', )
     whatsapp_business = fields.Char(help="Business ID of Whatsapp Cloud API",
                                     string="Whatsapp Business Account ID",

@@ -76,11 +76,11 @@ class SendWhatsappMessage(models.TransientModel):
             if " " in number:
                 number = number.replace(" ", "")
             account_sid = self.env['ir.config_parameter'].sudo().get_param(
-                'all_in_one_whatsapp_integration.account_sid')
+                'rm_whatsapp_integration.account_sid')
             auth_token = self.env['ir.config_parameter'].sudo().get_param(
-                'all_in_one_whatsapp_integration.auth_token')
+                'rm_whatsapp_integration.auth_token')
             twilio_whatsapp = self.env['ir.config_parameter'].sudo().get_param(
-                'all_in_one_whatsapp_integration.twilio_whatsapp')
+                'rm_whatsapp_integration.twilio_whatsapp')
             client = Client(account_sid, auth_token)
             message = client.messages.create(
                 from_='whatsapp:' + twilio_whatsapp,
@@ -103,9 +103,9 @@ class SendWhatsappMessage(models.TransientModel):
         elif self.send_mode == 'cloud':
             var = 'body'
             bearer_token = self.env['ir.config_parameter'].sudo().get_param(
-                'all_in_one_whatsapp_integration.bearer_token')
+                'rm_whatsapp_integration.bearer_token')
             whatsapp_no = self.env['ir.config_parameter'].sudo().get_param(
-                'all_in_one_whatsapp_integration.whatsapp_no')
+                'rm_whatsapp_integration.whatsapp_no')
             payload = {
                 "messaging_product": "whatsapp",
                 "recipient_type": "individual",

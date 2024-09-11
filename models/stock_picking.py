@@ -41,12 +41,12 @@ class StockPicking(models.Model):
                 'Por favor añade un número válido junto a un codigo '
                 'de país valido!'))
         twilio_whatsapp = (self.env['ir.config_parameter']
-                           .sudo().get_param('all_in_one_whatsapp_integration.'
+                           .sudo().get_param('rm_whatsapp_integration.'
                                              'twilio_whatsapp'))
         if twilio_whatsapp[0] != '+':
             raise ValidationError(_(
                 'Please add a valid twilio mobile number along with +'))
-        template_id = self.env.ref('all_in_one_whatsapp_integration.'
+        template_id = self.env.ref('rm_whatsapp_integration.'
                                    'stock_picking_whatsapp_template').id
         mail_template_values = (self.env['mail.template']
                                 .with_context(tpl_partners_only=True).
