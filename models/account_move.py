@@ -38,7 +38,7 @@ class AccountMove(models.Model):
         web page. """
         if not self.partner_id.mobile:
             raise ValidationError(
-                _('Add a WhatsApp mobile number to the sale order partner!'))
+                _('¡Agrega un número de whatsapp válido al contacto de la orden!'))
         if not self.partner_id.mobile.startswith('+'):
             raise ValidationError(
                 _('Please add a valid mobile number along with a valid'

@@ -35,11 +35,11 @@ class StockPicking(models.Model):
         that contain the message to send to the whatsapp web page."""
         if not self.partner_id.mobile:
             raise ValidationError(_(
-                'Add whatsapp mobile number in sale order partner!'))
+                'Agrega el número de whatsapp al contacto de la orden!'))
         if not self.partner_id.mobile[0] == '+':
             raise ValidationError(_(
-                'Please add a valid mobile number along with a valid '
-                'country code!'))
+                'Por favor añade un número válido junto a un codigo '
+                'de país valido!'))
         twilio_whatsapp = (self.env['ir.config_parameter']
                            .sudo().get_param('all_in_one_whatsapp_integration.'
                                              'twilio_whatsapp'))

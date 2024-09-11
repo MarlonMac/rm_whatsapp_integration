@@ -11,23 +11,15 @@
          <div>
             Hola, *<t t-out="object.partner_id.name or ' '"></t>*, <br>
             Bienvenido a  *<t t-out="object.company_id.name or ' '"></t>*
-			Es un gusto poder atenderte.
+			Es un gusto poder atenderle.
          </div>
          <t t-if="object.state in ('draft', 'sent')">
-            Tu cotización número *<t t-out="object.name or ' '"></t>* por un monto de *<t t-out="format_amount(object.amount_total, object.currency_id)"></t>* está lista.
+            Su cotización número *<t t-out="object.name or ' '"></t>* está lista.
             <div>
-                La fecha de referencia de tu cotización es: "<t t-out="object.date_order"></t>"
+			https://store.redmusiccorp.com.gt/my/orders/*<t t-out="object.id or ' '"></t>*?&amp;access&lowbar;token=*<t t-out="object.access_token or ' '"></t>*
+                _Por políticas de WhatsApp agregue este número a sus contactos para visualizar_ _el enlace de descarga_"
             </div>
-            <div>
-                Los detalles de tu cotización son los siguientes: <br>
-                <t t-foreach="object" t-as="orders">
-                    <t t-foreach="orders.order_line" t-as="order_id">
-                       *Producto: <t t-out="order_id.product_id.name"></t>* <br>
-                         *Cantidad: <t t-out="order_id.product_uom_qty"></t>*<br>
-                         *Precio:<t t-out="order_id.price_subtotal"></t>*<br>
-                    </t>
-                </t>
-            </div>
+   
 			<div>
             *RED MUSIC STORE*, <br>
             *TODAS LAS MARCAS EN UN SOLO LUGAR*
@@ -35,23 +27,15 @@
          </t>
          <t t-else="">
             <div>
-                Tu pedido número *<t t-out="object.name or ''"></t>* por un monto de *<t t-out="format_amount(object.amount_total, object.currency_id)"></t>* ha sido confirmado.
+                Su pedido número *<t t-out="object.name or ''"></t>* ha sido confirmado.
             </div>
             <div>
-                La fecha de referencia de tu pedido es: "<t t-out="object.date_order"></t>"
+				https://store.redmusiccorp.com.gt/my/orders/*<t t-out="object.id or ' '"></t>*?&amp;access&lowbar;token=*<t t-out="object.access_token or ' '"></t>*
+                _Por políticas de WhatsApp agregue este número a sus contactos para visualizar_ _el enlace de descarga_"
             </div>
             <div>
-                Los detalles de tu orden son lo siguientes: <br>
-                <t t-foreach="object" t-as="orders">
-                    <t t-foreach="orders.order_line" t-as="order_id">
-                        *Producto: <t t-out="order_id.product_id.name"></t>* <br>
-                        *Cantidad: <t t-out="order_id.product_uom_qty"></t>*<br>
-                        *Precio:<t t-out="order_id.price_subtotal"></t>*<br>
-                    </t>
-                </t>
-            </div>
-            <div>
-            Si tienes dudas o consultas adicionales, puedes consultarme con toda libertad.
+            Te atendió:
+			*<t t-out="user_id or ' '"></t>*
             </div>
 			<div>
             *RED MUSIC STORE*, <br>

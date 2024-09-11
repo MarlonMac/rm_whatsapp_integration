@@ -19,7 +19,7 @@
     </record>
     <record model="ir.actions.act_window"
             id="mail_template_delivery_action">
-        <field name="name">Whatsapp Templates for Delivery</field>
+        <field name="name">Plantilla WhatsApp para Envíos</field>
         <field name="res_model">mail.template</field>
         <field name="view_mode">form,tree</field>
         <field name="view_id" ref="mail.email_template_tree"/>

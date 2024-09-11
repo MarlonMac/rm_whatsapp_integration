@@ -34,11 +34,11 @@ class SaleOrder(models.Model):
         """When you click the send_by_whatsapp button, it will open a wizard
          that contain the message to send to the whatsapp web page."""
         if not self.partner_id.mobile:
-            raise ValidationError(_('Add whatsapp mobile number in '
-                                    'sale order partner!'))
+            raise ValidationError(_('¡Agrega un número de WhatsApp en '
+                                    'el contacto de la orden!'))
         if not self.partner_id.mobile[0] == "+":
-            raise ValidationError(_('Please add a valid mobile'
-                                    'number along with a valid country code!'))
+            raise ValidationError(_('¡Agrega un número de whatsapp'
+                                    'válido junto a un código de pais válido!'))
         twilio_whatsapp = (self.env["ir.config_parameter"].sudo().get_param
                            ("all_in_one_whatsapp_integration.twilio_whatsapp"))
         if not twilio_whatsapp:

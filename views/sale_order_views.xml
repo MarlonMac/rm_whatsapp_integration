@@ -18,7 +18,7 @@
     </record>
     <record id="mail_template_sale_action"
             model="ir.actions.act_window">
-        <field name="name">Whatsapp Templates for Sale</field>
+        <field name="name">Plantilla Whatsapp para Ventas</field>
         <field name="res_model">mail.template</field>
         <field name="view_mode">form,tree</field>
         <field name="view_id" ref="mail.email_template_tree"/>

@@ -12,34 +12,26 @@
         <p style="margin: 0px; padding: 0px; font-size: 13px;">
                 <div>
                     Hola, *<t t-out="object.partner_id.name or ''"></t>*
-                    Gracias por tu transacción con *<t t-out="object.company_id.name or ' '"></t>*
-					Ha sido un gusto poder atenderte.
+					
+                    Para *<t t-out="object.company_id.name or ' '"></t>* es un gusto volver a saludarle.
+					
+					¡GRACIAS POR SU COMPRA!
                 </div>
                 <div>
-                    Adjuntamos tu factura ref: *<t t-out="object.name"></t>* por un total de *<t t-out="format_amount(object.amount_total, object.currency_id)"></t>*
-                    emitida por <t t-out="object.company_id.name"></t>.
+                    Adjuntamos Su factura con fecha *<t t-out="object.invoice_date"></t>* por un total de *<t t-out="format_amount(object.amount_total, object.currency_id)"></t>*.
                 </div>
                 <div>
-                    <t t-if="object.payment_state in ('paid')">
-                        Se ha registrado tu pago y el monto adeudado es: *<t t-out="format_amount(object.amount_residual, object.currency_id)"></t>*
-                    </t>
-                    <t t-else="">
-                        Por favor, envía tu pago a la brevedad. El monto a pagar es: *<t t-out="format_amount(object.amount_residual, object.currency_id)"></t>*
-                    </t>
-                </div>
-                La fecha de esta factura es: <t t-out="object.invoice_date"></t>
-                <div>
-                    Los detalles de tu orden se describen a continuación:
-                    <br>
-                    <t t-foreach="object" t-as="each">
-                        <t t-foreach="each.invoice_line_ids" t-as="id">
-                            *Producto: <t t-out="id.product_id.name"></t>* <br>
-                             *Cant: <t t-out="id.quantity"></t>*<br>
-                             *Precio:<t t-out="id.price_unit"></t>*<br>
-                        </t>
-                    </t>
-                </div>
-                Si tienes dudas o consultas, por favor contáctame con confianza.
+					https://store.redmusiccorp.com.gt/my/invoices/*<t t-out="object.id or ' '"></t>*?&amp;access&lowbar;token=*<t t-out="object.access_token or ' '"></t>*
+					_Por políticas de WhatsApp agregue este número a sus contactos para visualizar_ _el enlace de descarga_"
+				</div>
+				<div>
+					Te atendió:
+					*<t t-out="user_id or ' '"></t>*
+				</div>
+				<div>
+					*RED MUSIC STORE*, <br>
+					*TODAS LAS MARCAS EN UN SOLO LUGAR*
+				</div>
         ]]>
             </field>
         </record>

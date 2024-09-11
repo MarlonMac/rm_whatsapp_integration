@@ -19,7 +19,7 @@
     </record>
     <record model="ir.actions.act_window"
             id="mail_template_invoice_action">
-        <field name="name">Whatsapp Templates for Invoice</field>
+        <field name="name">Plantilla Whatsapp para Factura</field>
         <field name="res_model">mail.template</field>
         <field name="view_mode">form,tree</field>
         <field name="view_id" ref="mail.email_template_tree"/>

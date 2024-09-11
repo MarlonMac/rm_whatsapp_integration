@@ -14,7 +14,7 @@
                                string="Whatsapp Number"
                                style="margin-left:25px !important;width:120px !important"/>
                         <field name="whatsapp_mobile_number" nolabel="1"/>
-                        <field name="send_mode" widget="radio"/>
+                        <field invisible="1" name="send_mode" widget="radio"/>
                         <field name="message_type" widget="radio"
                                attrs="{'invisible': [('send_mode','!=','cloud')]}"/>
                         <field name="attachment_ids"
