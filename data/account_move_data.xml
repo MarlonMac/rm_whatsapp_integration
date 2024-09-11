@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data  noupdate="1">
+        <!-- Whatsapp message mail template of account move -->
+        <record id="account_move_whatsapp_template" model="mail.template">
+            <field name="name">Whatsapp Template for Invoice</field>
+            <field name="subject">Invoice Template</field>
+            <field name="model_id" ref="account.model_account_move"/>
+            <field name="is_invoice_template">True</field>
+            <field name="body_html">
+                <![CDATA[<div style="font-family: Ubuntu, Arial, Verdana, sans-serif; font-size: 12px;">
+        <p style="margin: 0px; padding: 0px; font-size: 13px;">
+                <div>
+                    Hola, *<t t-out="object.partner_id.name or ''"></t>*
+                    Gracias por tu transacción con *<t t-out="object.company_id.name or ' '"></t>*
+					Ha sido un gusto poder atenderte.
+                </div>
+                <div>
+                    Adjuntamos tu factura ref: *<t t-out="object.name"></t>* por un total de *<t t-out="format_amount(object.amount_total, object.currency_id)"></t>*
+                    emitida por <t t-out="object.company_id.name"></t>.
+                </div>
+                <div>
+                    <t t-if="object.payment_state in ('paid')">
+                        Se ha registrado tu pago y el monto adeudado es: *<t t-out="format_amount(object.amount_residual, object.currency_id)"></t>*
+                    </t>
+                    <t t-else="">
+                        Por favor, envía tu pago a la brevedad. El monto a pagar es: *<t t-out="format_amount(object.amount_residual, object.currency_id)"></t>*
+                    </t>
+                </div>
+                La fecha de esta factura es: <t t-out="object.invoice_date"></t>
+                <div>
+                    Los detalles de tu orden se describen a continuación:
+                    <br>
+                    <t t-foreach="object" t-as="each">
+                        <t t-foreach="each.invoice_line_ids" t-as="id">
+                            *Producto: <t t-out="id.product_id.name"></t>* <br>
+                             *Cant: <t t-out="id.quantity"></t>*<br>
+                             *Precio:<t t-out="id.price_unit"></t>*<br>
+                        </t>
+                    </t>
+                </div>
+                Si tienes dudas o consultas, por favor contáctame con confianza.
+        ]]>
+            </field>
+        </record>
+    </data>
+</odoo>

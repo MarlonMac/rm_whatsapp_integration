@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <!--Whatsapp message mail template of stock picking -->
+        <record id="stock_picking_whatsapp_template" model="mail.template">
+            <field name="name">Whatsapp Template for Delivery</field>
+            <field name="subject">Inventory Template</field>
+            <field name="model_id" ref="stock.model_stock_picking"/>
+            <field name="is_delivery_template">True</field>
+            <field name="body_html"><![CDATA[<div style="font-family: Ubuntu, Arial, Verdana, sans-serif; font-size: 12px;">
+         <p style="margin: 0px; padding: 0px; font-size: 13px;">
+         <div>
+            Hola, *<t t-out="object.partner_id.name or ''"></t>*,
+         </div>
+         <div>
+             <t t-if="object.state in ('draft')">
+                Hemos recibido tu orden *<t t-out="object.name"></t>* y será enviada pronto.
+                <div>
+                    Los detalles de tu orden son los siguientes: <br>
+                    <t t-foreach="object" t-as="each">
+                        <t t-foreach="each.move_ids_without_package" t-as="id">
+                            *Producto: <t t-out="id.product_id.name"></t>* <br>
+                             *Cant: <t t-out="id.product_uom_qty"></t>*<br>
+                        </t>
+                    </t>
+                </div>
+             </t>
+             <t t-if="object.state in ('assigned')">
+                Tu orden *<t t-out="object.name"></t>* está lista y se enviará pronto.
+                <div>
+                    Los detalles de tu orden son los siguientes: <br>
+                    <t t-foreach="object" t-as="each">
+                        <t t-foreach="each.move_ids_without_package" t-as="id">
+                            *Producto: <t t-out="id.product_id.name"></t>* <br>
+                             *Cant: <t t-out="id.product_uom_qty"></t>*<br>
+                        </t>
+                    </t>
+                </div>
+             </t>
+             <t t-if="object.state in ('confirmed')">
+                Tu orden *<t t-out="object.name"></t>* está lista y se enviará pronto.
+                <div>
+                    Los detalles de tu orden son los siguientes: <br>
+                    <t t-foreach="object" t-as="each">
+                        <t t-foreach="each.move_ids_without_package" t-as="id">
+                            *Producto: <t t-out="id.product_id.name"></t>* <br>
+                             *Cant: <t t-out="id.product_uom_qty"></t>*<br>
+                        </t>
+                    </t>
+                </div>
+             </t>
+             <t t-if="object.state in ('done')">
+                Tu orden *<t t-out="object.name"></t>* ha sido enviada.
+                <div>
+                    Los detalles de tu orden son los siguentes: <br>
+                    <t t-foreach="object" t-as="each">
+                        <t t-foreach="each.move_ids_without_package" t-as="id">
+                            *Producto: <t t-out="id.product_id.name"></t>* <br>
+                             *Cant: <t t-out="id.quantity_done"></t>*<br>
+                        </t>
+                    </t>
+                </div>
+             </t>
+         </div>
+         <div>
+            Si tienes dudas o consultas, contáctame con confianza.
+         </div>
+		<div>
+		*RED MUSIC STORE*, <br>
+		*TODAS LAS MARCAS EN UN SOLO LUGAR*
+		</div>
+            </p>
+        ]]>
+            </field>
+        </record>
+    </data>
+</odoo>
