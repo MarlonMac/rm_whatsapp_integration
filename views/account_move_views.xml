@@ -29,6 +29,6 @@
     <menuitem id="account_move_menu"
               name="Whatsapp Templates"
               parent="account.menu_finance_configuration"
-              action="all_in_one_whatsapp_integration.mail_template_invoice_action"
+              action="rm_whatsapp_integration.mail_template_invoice_action"
               sequence="100"/>
 </odoo>

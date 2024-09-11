@@ -36,9 +36,9 @@ class MailMessage(models.Model):
         """This method creates a new mail message and then sends the message's
         body as a WhatsApp message using the Facebook Graph API."""
         bearer_token = self.env['ir.config_parameter'].sudo().get_param(
-            'all_in_one_whatsapp_integration.bearer_token')
+            'rm_whatsapp_integration.bearer_token')
         whatsapp_no = self.env['ir.config_parameter'].sudo().get_param(
-            'all_in_one_whatsapp_integration.whatsapp_no')
+            'rm_whatsapp_integration.whatsapp_no')
         if bearer_token and whatsapp_no and values_list[0]['model'] == 'mail.channel':
             if values_list[0]['email_from']:
                 mail_channel = self.env['mail.channel'].browse(

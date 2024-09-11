@@ -29,6 +29,6 @@
     <menuitem id="stock_picking_menu"
               name="Whatsapp Templates"
               parent="stock.menu_stock_config_settings"
-              action="all_in_one_whatsapp_integration.mail_template_delivery_action"
+              action="rm_whatsapp_integration.mail_template_delivery_action"
               sequence="100"/>
 </odoo>

@@ -28,6 +28,6 @@
     <menuitem id="sale_order_menu"
               name="Whatsapp Templates"
               parent="sale.menu_sale_config"
-              action="all_in_one_whatsapp_integration.mail_template_sale_action"
+              action="rm_whatsapp_integration.mail_template_sale_action"
               sequence="100"/>
 </odoo>

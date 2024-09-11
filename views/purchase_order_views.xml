@@ -29,6 +29,6 @@
     <menuitem id="purchase_order_menu"
               name="Whatsapp Templates"
               parent="purchase.menu_purchase_config"
-              action="all_in_one_whatsapp_integration.mail_template_purchase_action"
+              action="rm_whatsapp_integration.mail_template_purchase_action"
               sequence="100"/>
 </odoo>

@@ -16,10 +16,13 @@
          <t t-if="object.state in ('draft', 'sent')">
             Su cotización número *<t t-out="object.name or ' '"></t>* está lista.
             <div>
-			https://store.redmusiccorp.com.gt/my/orders/*<t t-out="object.id or ' '"></t>*?&amp;access&lowbar;token=*<t t-out="object.access_token or ' '"></t>*
-                _Por políticas de WhatsApp agregue este número a sus contactos para visualizar_ _el enlace de descarga_"
+				https://store.redmusiccorp.com.gt/my/orders/*<t t-out="object.id or ' '"></t>*?&amp;access&lowbar;token=*<t t-out="object.access_token or ' '"></t>*
+					_Por políticas de WhatsApp agregue este número a sus contactos para visualizar_ _el enlace de descarga_"
             </div>
-   
+			<div>
+				Te atendió:
+				*<t t-out="user_id or ' '"></t>*
+            </div>
 			<div>
             *RED MUSIC STORE*, <br>
             *TODAS LAS MARCAS EN UN SOLO LUGAR*
@@ -34,12 +37,12 @@
                 _Por políticas de WhatsApp agregue este número a sus contactos para visualizar_ _el enlace de descarga_"
             </div>
             <div>
-            Te atendió:
-			*<t t-out="user_id or ' '"></t>*
+				Te atendió:
+				*<t t-out="user_id or ' '"></t>*
             </div>
 			<div>
-            *RED MUSIC STORE*, <br>
-            *TODAS LAS MARCAS EN UN SOLO LUGAR*
+				*RED MUSIC STORE*, <br>
+				*TODAS LAS MARCAS EN UN SOLO LUGAR*
 			</div>
          </t>
         ]]>

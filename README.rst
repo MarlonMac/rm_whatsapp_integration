@@ -14,7 +14,7 @@ Installation
 
 Company
 -------
-* `Cybrosys Techno Solutions <https://cybrosys.com/>`__
+* `IPEMMA, S.A. <https://ipemma.com/>`__
 
 License
 -------
@@ -23,13 +23,13 @@ Affero General Public License, Version 3 (AGPL v3).
 
 Credits
 -------
-Developer: (V16)- Raneesha M K, Jumana Jabin MP, Vishnu P
-Contact: odoo@cybrosys.com
+Developer: (V16)- Marlon M, 
+Contact: odoo@ipemma.com
 
 Contacts
 --------
-* Mail Contact : odoo@cybrosys.com
-* Website : https://cybrosys.com
+* Mail Contact : odoo@ipemma.com
+* Website : https://ipemma.com
 
 Bug Tracker
 -----------
@@ -37,12 +37,9 @@ Bugs are tracked on GitHub Issues. In case of trouble, please check there if you
 
 Maintainer
 ==========
-.. image:: https://cybrosys.com/images/logo.png
-   :target: https://cybrosys.com
+This module is maintained by IPEMMA, S.A.
 
-This module is maintained by Cybrosys Technologies.
-
-For support and more information, please visit https://www.cybrosys.com
+For support and more information, please visit https://www.ipemma.com
 
 Further information
 ===================
